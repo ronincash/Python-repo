@@ -1,2 +1,3 @@
 This is adding a line to the testFile.
 Just to see what it inspires in git status.
+Now I'm adding a new change.
