@@ -67,7 +67,11 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   # +++your code here+++
-  return
+  frontA = a[0:2]
+  frontB = b[0:2]
+  newA = a.replace(frontA,frontB)
+  newB = b.replace(frontB,frontA)
+  return newA + " " + newB
 
 
 # Provided simple test() function used in main() to print
@@ -104,14 +108,13 @@ def main():
   test(fix_start('aardvark'), 'a*rdv*rk')
   test(fix_start('google'), 'goo*le')
   test(fix_start('donut'), 'donut')
-"""
+
   print
-  print 'mix_up'
+  print ('mix_up')
   test(mix_up('mix', 'pod'), 'pox mid')
   test(mix_up('dog', 'dinner'), 'dig donner')
   test(mix_up('gnash', 'sport'), 'spash gnort')
   test(mix_up('pezzy', 'firm'), 'fizzy perm')
-"""
 
 # Standard boilerplate to call the main() function.
 if __name__ == '__main__':
