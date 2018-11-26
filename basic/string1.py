@@ -37,7 +37,8 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # +++your code here+++
-  return
+  if len(s) < 2: return ""
+  else: return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -51,7 +52,10 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
-  return
+  firstChar = s[0]
+  newString = s[1:]
+  newString = newString.replace(firstChar,"*")
+  return firstChar + newString
 
 
 # D. MixUp
@@ -86,22 +90,21 @@ def main():
   test(donuts(9), 'Number of donuts: 9')
   test(donuts(10), 'Number of donuts: many')
   test(donuts(99), 'Number of donuts: many')
-"""
+
   print
-  print 'both_ends'
+  print ('both_ends')
   test(both_ends('spring'), 'spng')
   test(both_ends('Hello'), 'Helo')
   test(both_ends('a'), '')
   test(both_ends('xyz'), 'xyyz')
-
   
   print
-  print 'fix_start'
+  print ('fix_start')
   test(fix_start('babble'), 'ba**le')
   test(fix_start('aardvark'), 'a*rdv*rk')
   test(fix_start('google'), 'goo*le')
   test(fix_start('donut'), 'donut')
-
+"""
   print
   print 'mix_up'
   test(mix_up('mix', 'pod'), 'pox mid')
