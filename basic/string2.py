@@ -37,7 +37,14 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
   # +++your code here+++
-  return
+  if s.find('not') > 0 and s.find('bad') > s.find('not'):
+    notIndex = s.find('not')
+    badIndex = s.find('bad') + 2
+    replaceString = s[notIndex:badIndex + 1]
+    newString = s.replace(replaceString,"good")
+    return newString
+  else:
+    return s
 
 
 # F. front_back
@@ -49,7 +56,21 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
   # +++your code here+++
-  return
+  #first determine if can be split equally in half
+  if len(a)%2 == 0:
+    frontHalfA = a[:int(len(a)/2)]
+    backHalfA  = a[int(len(a)/2):]
+  else:
+    frontHalfA = a[:round(int(len(a)/2)) + 1]
+    backHalfA  = a[round(int(len(a)/2)) + 1:]
+
+  if len(b)%2 == 0:
+    frontHalfB = b[:int(len(b)/2)]
+    backHalfB = b[int(len(b)/2):]
+  else:
+    frontHalfB = b[:round(int(len(b)/2)) + 1]
+    backHalfB = b[round(int(len(b)/2)) + 1:]
+  return frontHalfA + frontHalfB + backHalfA + backHalfB
 
 
 # Simple provided test() function used in main() to print
@@ -69,20 +90,20 @@ def main():
   test(verbing('hail'), 'hailing')
   test(verbing('swiming'), 'swimingly')
   test(verbing('do'), 'do')
-"""
+
   print
-  print 'not_bad'
+  print ('not_bad')
   test(not_bad('This movie is not so bad'), 'This movie is good')
   test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
   test(not_bad('This tea is not hot'), 'This tea is not hot')
   test(not_bad("It's bad yet not"), "It's bad yet not")
 
   print
-  print 'front_back'
+  print ('front_back')
   test(front_back('abcd', 'xy'), 'abxcdy')
   test(front_back('abcde', 'xyz'), 'abcxydez')
   test(front_back('Kitten', 'Donut'), 'KitDontenut')
-"""
+
 
 if __name__ == '__main__':
   main()
