@@ -11,6 +11,7 @@ def weirdNum(x):
         if x > 20:
             print ('Not Weird')
 
+#Leap year function
 def leapYear(y):
     leap = False
 
