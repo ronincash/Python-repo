@@ -1,2 +1,2 @@
 # Python-repo
-This will be a test repo for Python work.
+This will be a repo for Python work.
